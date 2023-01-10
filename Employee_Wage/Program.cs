@@ -2,8 +2,9 @@
 {
     public class Program
     {
-        public const int IS_FULL_TIME = 1, IS_PART_TIME = 2, EMP_RATE_PER_HOUR = 20, NUM_OF_WORKING_DAYS = 20, MAX_HOURS_IN_MONTH = 100;
-        public static int computeEmpWage()
+        public const int IS_FULL_TIME = 1, IS_PART_TIME = 2;
+
+        public static int computeEmpWage(string company, int EMP_RATEPER_HOUR, int NUM_OF_WORKING_DAYS, int MAX_HOURS_IN_MONTH)
         {
             
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
@@ -30,13 +31,14 @@
                 Console.WriteLine("Days : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
 
-            int totalempwage = totalEmpHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Total Emp Wage : " + totalempwage);
+            int totalempwage = totalEmpHrs * EMP_RATEPER_HOUR;
+            Console.WriteLine("Total Emp Wage of  "+ company + " is : " + totalempwage);
             return totalempwage;
         }
         static void Main(string[] args)
         {
-            computeEmpWage();
+            computeEmpWage("JIO", 35, 25, 120);
+            computeEmpWage("VI", 40, 26, 140);
         }
     }
     
