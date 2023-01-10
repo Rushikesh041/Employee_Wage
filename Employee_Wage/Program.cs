@@ -3,14 +3,14 @@
     public class Program
     {
         public const int IS_FULL_TIME = 1, IS_PART_TIME = 2, EMP_RATE_PER_HOUR = 20, NUM_OF_WORKING_DAYS = 20, MAX_HOURS_IN_MONTH = 100;
-        static void Main(string[] args)
+        public static int computeEmpWage()
         {
-            // Variables
-            int empHrs = 0, totalEmpHrs = 0, totalempwage = 0, totalworkingDays = 0;
+            
+            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
-            while (totalEmpHrs <= MAX_HOURS_IN_MONTH && totalworkingDays < NUM_OF_WORKING_DAYS)
+            while (totalEmpHrs <= MAX_HOURS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
-                totalworkingDays++;
+
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
                 switch (empCheck)
@@ -25,11 +25,18 @@
                         empHrs = 0;
                         break;
                 }
+                totalWorkingDays++;
                 totalEmpHrs += empHrs;
-                Console.WriteLine("Days : " + totalworkingDays + " Emp Hours : " + empHrs);
+                Console.WriteLine("Days : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
-            totalempwage = totalEmpHrs * EMP_RATE_PER_HOUR;
+
+            int totalempwage = totalEmpHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Total Emp Wage : " + totalempwage);
+            return totalempwage;
+        }
+        static void Main(string[] args)
+        {
+            computeEmpWage();
         }
     }
     
