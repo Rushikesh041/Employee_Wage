@@ -4,12 +4,11 @@
     {
         static void Main(string[] args)
         {
-            EmpWageBuilder JIO = new EmpWageBuilder("JIO", 35, 25, 120);
-            EmpWageBuilder VI = new EmpWageBuilder("VI", 40, 26, 140);
-            JIO.computeEmpWage();
-            
-            VI.computeEmpWage();
-           
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+            empWageBuilder.addcompanyEmpWage("JIO", 35, 25, 120);
+            empWageBuilder.addcompanyEmpWage("VI", 40, 26, 140);
+
+            empWageBuilder.computeEmpWage();
         }
     }
     
